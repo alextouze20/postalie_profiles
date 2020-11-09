@@ -33,6 +33,9 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'devise'
 gem 'cloudinary', '~> 1.16.0'
+gem 'uuid', '~> 2.3', '>= 2.3.8'
+gem 'sitemap_generator'
+
 
 group :development, :test do
   gem 'pry-byebug'
