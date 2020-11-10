@@ -81,6 +81,13 @@ GEM
       rest-client
     coderay (1.1.3)
     concurrent-ruby (1.1.7)
+    countries (3.0.1)
+      i18n_data (~> 0.10.0)
+      sixarm_ruby_unaccent (~> 1.1)
+      unicode_utils (~> 1.4)
+    country_select (4.0.0)
+      countries (~> 3.0)
+      sort_alphabetical (~> 1.0)
     crass (1.0.6)
     devise (4.7.3)
       bcrypt (~> 3.0)
@@ -106,6 +113,7 @@ GEM
       domain_name (~> 0.5)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
+    i18n_data (0.10.0)
     jbuilder (2.10.1)
       activesupport (>= 5.0.0)
     listen (3.2.1)
@@ -209,6 +217,9 @@ GEM
       activemodel (>= 5.0)
     sitemap_generator (6.1.2)
       builder (~> 3.0)
+    sixarm_ruby_unaccent (1.2.0)
+    sort_alphabetical (1.1.0)
+      unicode_utils (>= 1.2.2)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -224,6 +235,8 @@ GEM
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
+    time_difference (0.5.0)
+      activesupport
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -232,6 +245,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.7)
+    unicode_utils (1.4.0)
     uuid (2.3.9)
       macaddr (~> 1.0)
     warden (1.2.9)
@@ -265,6 +279,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   cloudinary (~> 1.16.0)
+  country_select
   devise
   dotenv-rails
   font-awesome-sass
@@ -281,6 +296,7 @@ DEPENDENCIES
   sitemap_generator
   spring
   spring-watcher-listen (~> 2.0.0)
+  time_difference
   turbolinks (~> 5)
   tzinfo-data
   uuid (~> 2.3, >= 2.3.8)

@@ -1,4 +1,24 @@
-<h1><%= @profile.fullname %></h1>
+<% require 'date' %>
+<% require 'time_difference' %>
+
+<% uuid = UUID.new %>
+<% today = DateTime.now %>
+<% age = (DateTime.now - @profile.dob).to_i %>
 
 <%= cl_image_tag(@profile.photo.key,
       width: 400, height: 300, crop: :fill) %>
+<p>Full name: <%= @profile.fullname %></p>
+<p>Age: <%= age / 365 %></p>
+<p>Bio: <%= @profile.bio %></p>
+<p>User owner: <%= @profile.user_id %></p>
+<p>Country: <%= @profile.address_country %></p>
+<a href="#">Link</a>
+
+<p>ID: <%= uuid.generate %></p>
+
+<% if current_user == @profile.user.id %>
+  <a href="#">Edit</a>
+<% else %>
+<% end %>
+
+

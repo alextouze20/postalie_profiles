@@ -1,6 +1,16 @@
+<% uuid = UUID.new.generate %>
 <h1>Add a new profile</h1>
-<%= simple_form_for (@profile) do |f| %>
-  <%= f.input :fullname %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit "Create restaurant", class: "btn btn-primary" %>
-<% end %>
+
+  <%= simple_form_for (@profile) do |f| %>
+    <%= f.input :fullname %>
+    <%= f.input :dob, as: :date, html5: true %>
+    <%= f.input :bio %>
+    <%= f.input :address_street1 %>
+    <%= f.input :address_street2 %>
+    <%= f.input :address_zip, as: :integer %>
+    <%= f.input :address_province, as: :string %>
+    <%= f.country_select :address_country %>
+    <%= f.input :photo, as: :file %>
+    <%= f.input :public, as: :boolean, checked_value: true, unchecked_value: false %>
+    <%= f.submit "Create restaurant", class: "btn btn-primary" %>
+  <% end %>
