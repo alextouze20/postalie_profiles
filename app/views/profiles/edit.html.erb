@@ -1,7 +1,5 @@
-<% if current_user.profile.nil? %>
-
 <% uuid = UUID.new.generate %>
-<h1>Add a new profile</h1>
+<h1>Edit your profile</h1>
 
   <%= simple_form_for (@profile) do |f| %>
     <%= f.input :fullname, required: true %>
@@ -10,15 +8,9 @@
     <%= f.input :address_street1, required: true %>
     <%= f.input :address_street2 %>
     <%= f.input :address_zip, as: :integer, required: true %>
-    <%= f.input :address_city, as: :string %>
+    <%= f.input :address_province, as: :string %>
     <%= f.country_select :address_country, required: true %>
     <%= f.input :photo, as: :file %>
     <%= f.input :public, as: :boolean, checked_value: true, unchecked_value: false %>
     <%= f.submit "Create restaurant", class: "btn btn-primary" %>
   <% end %>
-
-<% else %>
-
-<h1>You already have a profile.</h1>
-
-<% end %>

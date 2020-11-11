@@ -37,6 +37,7 @@ gem 'uuid', '~> 2.3', '>= 2.3.8'
 gem 'sitemap_generator'
 gem 'country_select'
 gem 'time_difference'
+gem 'pundit'
 
 
 group :development, :test do
