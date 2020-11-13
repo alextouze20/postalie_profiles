@@ -30,7 +30,8 @@ puts "Creating profile Alex..."
 profile_alex = Profile.new( {
   firstname: "Alex",
   lastname: "Touze",
-  dob: "20/12/1993",
+  dob: "#{rand(1..30)}/#{rand(1..12)}/#{rand(1990..2000)}",
+  bio: "Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Donec rutrum congue leo eget malesuada. ",
   address_street1: "Legalitat 13,",
   address_city: "Barcelona",
   address_zip: "08024",
@@ -48,7 +49,8 @@ puts "Creating profile Arthur..."
 profile_arthur = Profile.new( {
   firstname: "Arthur",
   lastname: "Touze",
-  dob: "20/12/1993",
+  dob: "#{rand(1..30)}/#{rand(1..12)}/#{rand(1990..2000)}",
+  bio: "Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Donec rutrum congue leo eget malesuada. ",
   address_street1: "Legalitat 13,",
   address_zip: "08024",
   address_city: "Barcelona",
@@ -66,7 +68,8 @@ puts "Creating profile Boubou..."
 profile_boubou = Profile.new( {
   firstname: "Boutayna",
   lastname: "Jalili",
-  dob: "20/12/1993",
+  dob: "#{rand(1..30)}/#{rand(1..12)}/#{rand(1990..2000)}",
+  bio: "Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Donec rutrum congue leo eget malesuada. ",
   address_city: "Barcelona",
   address_street1: "Legalitat 13,",
   address_zip: "08024",
@@ -84,7 +87,8 @@ puts "Creating profile Fred..."
 profile_fred = Profile.new( {
   firstname: "Fred",
   lastname: "Touze",
-  dob: "20/12/1993",
+  dob: "#{rand(1..30)}/#{rand(1..12)}/#{rand(1990..2000)}",
+  bio: "Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Donec rutrum congue leo eget malesuada. ",
   address_city: "Barcelona",
   address_street1: "Legalitat 13,",
   address_zip: "08024",
@@ -102,7 +106,8 @@ puts "Creating profile Sophie..."
 profile_sophie = Profile.new( {
   firstname: "Sophie",
   lastname: "Touze",
-  dob: "20/12/1993",
+  dob: "#{rand(1..30)}/#{rand(1..12)}/#{rand(1990..2000)}",
+  bio: "Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Donec rutrum congue leo eget malesuada. ",
   address_city: "Barcelona",
   address_street1: "Legalitat 13,",
   address_zip: "08024",
@@ -120,7 +125,8 @@ puts "Creating profile Laurent..."
 profile_laurent = Profile.new( {
   firstname: "Laurent",
   lastname: "Touze",
-  dob: "20/12/1993",
+  dob: "#{rand(1..30)}/#{rand(1..12)}/#{rand(1990..2000)}",
+  bio: "Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Donec rutrum congue leo eget malesuada. ",
   address_city: "Barcelona",
   address_street1: "Legalitat 13,",
   address_zip: "08024",
