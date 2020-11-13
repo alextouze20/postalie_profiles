@@ -11,11 +11,11 @@
         <%= cl_image_tag(@profile.photo.key,
             width: 150, height: 150, crop: :fill, class: "profile-picture") %>
       <% else %>
-        <%= cl_image_tag("https://postalie.com/wp-content/uploads/2020/11/profile-picture-default.png",
+        <%= cl_image_tag("https://postalie.com/wp-content/uploads/2020/11/pp-default-3.png",
             width: 150, height: 150, crop: :fill, class: "profile-picture") %>
       <% end %>
     </div>
-    <h1 class="title"><%= @profile.fullname %></h1>
+    <h1 class="title"><%= @profile.firstname %> <%= @profile.lastname %></h1>
     <h2 class="subtitle"><%= age / 365 %>, <%= @profile.address_city %>, <%= @profile.address_country %></h2>
     <p class="bio-text"><%= @profile.bio %></p>
     <a class="send-button" href="https://postalie.com">

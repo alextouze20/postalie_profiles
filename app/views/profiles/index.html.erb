@@ -1,38 +1,53 @@
 <% require 'date' %>
 
 <div class="all-profiles">
-  <% @profiles.reverse.each do |profile| %>
-    <% today = DateTime.now %>
-    <% age = (DateTime.now - profile.dob).to_i %>
+<% if current_user.profile.nil? %>
+  <div class="container-profile new-profile-container">
+    <%= link_to new_profile_path  do %>
+      <i class="fas fa-plus"></i>
+      <p>Create your profile</p>
+    <% end %>
+  </div>
+<% else %>
+<% end %>
+
+  <% @profiles.sort.reverse.each do |profile| %>
+    <% profile.dob.nil? ? age = nil : age = (DateTime.now - profile.dob).to_i %>
       <div class="container-profile">
         <%= link_to profile_path(profile.id) do %>
           <div class="img-container">
             <% profil_pic =
               if profile.photo.attached?
-                cl_image_path(profile.photo.key,
-                    width: 150, height: 150, crop: :fill, class: "profile-picture")
+                cl_image_path(profile.photo.key, crop: :fill, class: "profile-picture")
               else
-                cl_image_path("https://postalie.com/wp-content/uploads/2020/11/profile-picture-default.png",
-                      width: 150, height: 150, crop: :fill, class: "profile-picture")
+                cl_image_path("https://postalie.com/wp-content/uploads/2020/11/pp-default-3.png", crop: :fill, class: "profile-picture-default")
               end
             %>
             <div class="profile-img" style="background-image: url(<%= profil_pic %>">
             </div>
           </div>
-          <p class="name-title"><%= profile.fullname %></p>
-          <p class="subtitle"><%= age / 365 %>, <%= profile.address_city %>, <%= profile.address_country %></p>
+          <p class="name-title"><%= profile.firstname %> <%= profile.lastname %></p>
+          <p class="subtitle"><%= age.nil? ? "" : "#{age / 365}, " %><%= profile.address_city %>, <%= profile.address_country %></p>
         <% end %>
       </div>
   <% end %>
 </div>
 
-<% if current_user.profile.nil? %>
-  <%= link_to "Create my profile", new_profile_path %>
-<% else %>
-  <%= link_to "View my profile", profile_path(current_user.profile) %>
-<% end %>
-
 <style>
+
+.new-profile-container {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3em;
+    border: solid 2px #4364EC !important;
+}
+
+.new-profile-container > a {
+    color: #4364EC;
+}
+
 
 body {
   padding-bottom: 10%;

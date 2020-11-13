@@ -28,7 +28,8 @@ laurent.save
 puts "Creating profile Alex..."
 
 profile_alex = Profile.new( {
-  fullname: "Alex Touze",
+  firstname: "Alex",
+  lastname: "Touze",
   dob: "20/12/1993",
   address_street1: "Legalitat 13,",
   address_city: "Barcelona",
@@ -45,7 +46,8 @@ alex.profile = profile_alex
 puts "Creating profile Arthur..."
 
 profile_arthur = Profile.new( {
-  fullname: "Arthur Touze",
+  firstname: "Arthur",
+  lastname: "Touze",
   dob: "20/12/1993",
   address_street1: "Legalitat 13,",
   address_zip: "08024",
@@ -62,7 +64,8 @@ arthur.profile = profile_arthur
 puts "Creating profile Boubou..."
 
 profile_boubou = Profile.new( {
-  fullname: "Boutayna Jalili",
+  firstname: "Boutayna",
+  lastname: "Jalili",
   dob: "20/12/1993",
   address_city: "Barcelona",
   address_street1: "Legalitat 13,",
@@ -79,7 +82,8 @@ boubou.profile = profile_boubou
 puts "Creating profile Fred..."
 
 profile_fred = Profile.new( {
-  fullname: "Fred Touze",
+  firstname: "Fred",
+  lastname: "Touze",
   dob: "20/12/1993",
   address_city: "Barcelona",
   address_street1: "Legalitat 13,",
@@ -96,7 +100,8 @@ fred.profile = profile_fred
 puts "Creating profile Sophie..."
 
 profile_sophie = Profile.new( {
-  fullname: "Sophie Touze",
+  firstname: "Sophie",
+  lastname: "Touze",
   dob: "20/12/1993",
   address_city: "Barcelona",
   address_street1: "Legalitat 13,",
@@ -113,7 +118,8 @@ sophie.profile = profile_sophie
 puts "Creating profile Laurent..."
 
 profile_laurent = Profile.new( {
-  fullname: "Laurent Touze",
+  firstname: "Laurent",
+  lastname: "Touze",
   dob: "20/12/1993",
   address_city: "Barcelona",
   address_street1: "Legalitat 13,",

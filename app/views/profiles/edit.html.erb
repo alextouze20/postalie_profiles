@@ -1,16 +1,209 @@
-<% uuid = UUID.new.generate %>
-<h1>Edit your profile</h1>
+<% if current_user.profile.nil? %>
 
-  <%= simple_form_for (@profile) do |f| %>
-    <%= f.input :fullname, required: true %>
-    <%= f.input :dob, as: :date, html5: true, required: true %>
-    <%= f.input :bio %>
-    <%= f.input :address_street1, required: true %>
-    <%= f.input :address_street2 %>
-    <%= f.input :address_zip, as: :integer, required: true %>
-    <%= f.input :address_province, as: :string %>
-    <%= f.country_select :address_country, required: true %>
-    <%= f.input :photo, as: :file %>
-    <%= f.input :public, as: :boolean, checked_value: true, unchecked_value: false %>
-    <%= f.submit "Create restaurant", class: "btn btn-primary" %>
-  <% end %>
+<div class="signup-container">
+  <h1>You don't have a profile yet.</h1><br/><p>Click here to <%= link_to "Create your profile.", new_profile_path %></p>
+</div>
+
+<% else %>
+
+<div class="signup-container">
+    <h1>Edit your profile</h1>
+    <%= simple_form_for (@profile) do |f| %>
+      <%= f.input :firstname,
+                  required: true,
+                  label: false,
+                  placeholder: "First name *"
+                  %>
+      <%= f.input :lastname,
+                  required: true,
+                  label: false,
+                  placeholder: "Last name *"
+                  %>
+      <%= f.input :dob,
+                  as: :date,
+                  html5: true,
+                  required: true,
+                  label: false,
+                  hint: "Date of birth *"
+                  %>
+      <%= f.input :bio,
+                  label: false,
+                  placeholder: "Add a profile bio..."
+                  %>
+      <%= f.input :address_street1,
+                  required: true,
+                  label: false,
+                  placeholder: "Address line 1 *"
+                  %>
+      <%= f.input :address_street2,
+                  label: false,
+                  placeholder: "Address line 2"
+                  %>
+        <%= f.input :address_zip,
+                  as: :integer,
+                  required: true,
+                  label: false,
+                  placeholder: "Zip code *"
+                  %>
+        <%= f.input :address_city,
+                  as: :string,
+                  required: true,
+                  label: false,
+                  placeholder: "City *"
+                  %>
+      <%= f.country_select :address_country,
+                  required: true,
+                  label: false,
+                  placeholder: "Country *"
+                  %>
+      <%= f.input :photo,
+                  as: :file,
+                  label: "📸 Upload photo"
+                  %>
+      <%= f.input :public,
+                  as: :boolean,
+                  checked_value: true,
+                  label: "Make my profile public",
+                  unchecked_value: false
+                  %>
+        <%= f.submit "Edit my profile" %>
+    <% end %>
+</div>
+<% end %>
+
+<style>
+
+h1 {
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+body {
+    background-color: #EDF2FF;
+}
+
+.signup-container {
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 15%;
+  margin-top: 5%;
+}
+
+@media only screen and (max-width: 600px) {
+  .signup-container {
+  margin-left: 5% !important;
+  margin-right: 5% !important;
+}
+ h1 {
+  margin-bottom: 10%;
+ }
+}
+
+input#profile_firstname {
+    float: left;
+    width: 49%;
+    margin-right: 2%;
+}
+
+input#profile_lastname {
+    width: 49%;
+}
+
+input#profile_address_city {
+    width: 49%;
+    float: left;
+    margin-right: 2%;
+}
+
+textarea#profile_bio {
+    padding-top: 2%;
+    border-radius: 5px !important;
+}
+
+input {
+    height: 50px !important;
+    border-radius: 5px !important;
+}
+
+select#profile_address_country {
+    height: 50px;
+    padding-left: 1%;
+    color: #495057;
+    border: 1px solid #ced4da;
+    width: 49%;
+    border-radius: 5px;
+}
+
+label.file.optional {
+    margin-top: 2%;
+    width: 49%;
+    background: white;
+    color: #495057;
+    height: 50px;
+    border-radius: 5px;
+    border: solid 1px #ced4da;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+}
+
+label.form-check-label.boolean.optional {
+    margin-left: 2%;
+    margin-top: 5px;
+}
+
+input#profile_public {
+    width: 25px;
+}
+
+input#profile_address_street2 {
+    width: 63%;
+    float: left;
+    margin-right: 2%;
+}
+
+input#profile_address_zip {
+  width: 35%;
+}
+
+input#profile_address_street1 {
+    margin-bottom: 3%;
+}
+
+.signup-container {
+    background-color: white;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    border-radius: 15px;
+
+}
+
+input[type="submit"] {
+    width: 100%;
+    background: #4364EC;
+    border: none;
+    color: white;
+    font-weight: 600;
+}
+
+input[type="submit"]:hover {
+    opacity: 0.9;
+}
+
+input#profile_photo {
+    display: none;
+}
+
+small.form-text.text-muted {
+    margin-left: 1%;
+}
+
+</style>

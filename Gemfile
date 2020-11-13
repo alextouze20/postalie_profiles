@@ -38,6 +38,7 @@ gem 'sitemap_generator'
 gem 'country_select'
 gem 'time_difference'
 gem 'pundit'
+gem 'countries'
 
 
 group :development, :test do
