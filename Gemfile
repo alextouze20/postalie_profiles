@@ -31,6 +31,15 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'devise'
+gem 'cloudinary', '~> 1.16.0'
+gem 'uuid', '~> 2.3', '>= 2.3.8'
+gem 'sitemap_generator'
+gem 'country_select'
+gem 'time_difference'
+gem 'pundit'
+gem 'countries'
+
 
 group :development, :test do
   gem 'pry-byebug'

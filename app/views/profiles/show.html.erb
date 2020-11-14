@@ -1,0 +1,134 @@
+<% require 'date' %>
+
+<% today = DateTime.now %>
+<% age = (DateTime.now - @profile.dob).to_i %>
+
+
+<div class="container">
+  <div class="profile-container">
+    <div class="img-container">
+      <% if @profile.photo.attached? %>
+        <%= cl_image_tag(@profile.photo.key,
+            width: 150, height: 150, crop: :fill, class: "profile-picture") %>
+      <% else %>
+        <%= cl_image_tag("https://postalie.com/wp-content/uploads/2020/11/pp-default-3.png",
+            width: 150, height: 150, crop: :fill, class: "profile-picture") %>
+      <% end %>
+    </div>
+    <h1 class="title"><%= @profile.firstname %> <%= @profile.lastname %></h1>
+    <h2 class="subtitle"><%= age / 365 %>, <%= @profile.address_city %>, <%= @profile.address_country %></h2>
+    <p class="bio-text"><%= @profile.bio %></p>
+    <a class="send-button" href="https://postalie.com">
+      <div class="button-container">
+        <span class="button-text">Write to me</span>
+      </div>
+    </a>
+
+  </div>
+  <div class="extra-button">
+  <% if @profile.user == current_user %>
+        <%= link_to "Edit my profile", edit_profile_path(@profile) %> |
+        <%= link_to "Delete my profile",
+                  profile_path(@profile),
+                  method: :delete,
+                  data: { confirm: "Delete your account?" } %>
+      <% else %>
+      <% end %>
+    </div>
+</div>
+
+<style>
+
+img.profile-picture {
+    border-radius: 50%;
+    border: solid 5px white;
+}
+
+h1.title {
+    text-align: center;
+    margin-top: 5%;
+    font-family: Poppins;
+    color: #212529;
+}
+
+h2.subtitle {
+    text-align: center;
+    color: lightgrey;
+    font-size: 1.2em;
+    font-family: Poppins;
+    color: #B9C8FF;
+}
+
+.profile-container {
+    background: white;
+    border-radius: 15px;
+    padding: 5%;
+    margin-top: 25%;
+    box-shadow: 0px 0px 10px 0px #B9C8FF;
+}
+
+body {
+  padding-bottom: 10%;
+  background-color: #EDF2FF;
+}
+
+.button-container {
+    background-color: #4364EC;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 10%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    font-size: 1.2em;
+}
+
+.button-container:hover {
+  opacity: 0.9;
+}
+
+.img-container {
+    text-align: center;
+    margin-top: -20%;
+}
+
+.send-button {
+  font-family: Poppins;
+  color: white;
+  font-weight: 600;
+}
+
+.send-button:hover {
+  text-decoration: none;
+  color: white;
+}
+
+
+@media only screen
+   and (min-width : 1200px) {
+   .container {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+}
+
+p.bio-text {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    font-family: Poppins;
+    color: #474B4F;
+    text-align: justify;
+    font-size: 1.1em;
+}
+
+.extra-button {
+    margin-top: 5%;
+    font-family: Poppins;
+    color: #212529;
+}
+
+.extra-button > a {
+    color: #212529;
+}
+
+
+</style>
