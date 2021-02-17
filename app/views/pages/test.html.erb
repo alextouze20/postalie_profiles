@@ -3,6 +3,7 @@
 <%
 require "streamio-ffmpeg"
 require "net/http"
+require 'ffprober'
 
 audio = "https://ucarecdn.com/1ba97d0a-e709-4915-bb35-5ad9e1b42975/test2.mp3"
 audioOpen = FFMPEG::Movie.new(audio)

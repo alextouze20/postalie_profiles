@@ -104,6 +104,8 @@ GEM
     erubi (1.9.0)
     execjs (2.7.0)
     ffi (1.13.1)
+    ffprober (1.0)
+      sorbet-runtime
     font-awesome-sass (5.15.1)
       sassc (>= 1.11)
     globalid (0.4.2)
@@ -225,6 +227,7 @@ GEM
     sitemap_generator (6.1.2)
       builder (~> 3.0)
     sixarm_ruby_unaccent (1.2.0)
+    sorbet-runtime (0.5.6292)
     sort_alphabetical (1.1.0)
       unicode_utils (>= 1.2.2)
     spring (2.1.1)
@@ -293,6 +296,7 @@ DEPENDENCIES
   country_select
   devise
   dotenv-rails
+  ffprober
   font-awesome-sass
   jbuilder (~> 2.7)
   listen (~> 3.2)

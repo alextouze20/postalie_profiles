@@ -41,6 +41,8 @@ gem 'pundit'
 gem 'countries'
 gem 'net-http'
 gem 'streamio-ffmpeg'
+gem 'ffprober'
+
 
 
 group :development, :test do
