@@ -39,6 +39,8 @@ gem 'country_select'
 gem 'time_difference'
 gem 'pundit'
 gem 'countries'
+gem 'net-http'
+gem 'streamio-ffmpeg'
 
 
 group :development, :test do

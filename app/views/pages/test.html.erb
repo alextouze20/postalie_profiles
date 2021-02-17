@@ -1,1 +1,18 @@
-<h1>test ffmpeg</h1>h
+<h1>test ffmpeg</h1>
+
+<%
+require "streamio-ffmpeg"
+require "net/http"
+
+audio = "https://ucarecdn.com/1ba97d0a-e709-4915-bb35-5ad9e1b42975/test2.mp3"
+audioOpen = FFMPEG::Movie.new(audio)
+resultaudio = audioOpen.duration.to_s
+
+video = "https://ucarecdn.com/d740dbfe-1434-4aa7-ac50-83784c900de8/testvideoobama.mkv"
+videoOpen = FFMPEG::Movie.new(video)
+resultvideo = videoOpen.duration.to_s
+
+%>
+
+<p>audio = <%= resultaudio %> seconds</p>
+<p>Video = <%= resultvideo %> seconds</p>
